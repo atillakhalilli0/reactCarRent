@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./FooterStyle.css";
 function Footer() {
   const [contactsExpanded, setContactsExpanded] = useState(false);
 
@@ -25,44 +25,45 @@ function Footer() {
         <ul
           className={`${
             contactsExpanded ? "grid" : "hidden"
-          } md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 text-white text-sm md:text-base lg:text-lg items-center font-medium capitalize`}
+          } md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-white text-sm md:text-base items-center font-medium capitalize`}
         >
-          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
-            <i className="fa-solid fa-map-location-dot"></i>
-            <a className="ml-2 truncate" href="#">
-              main office
-            </a>
-          </li>
-          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
-            <i className="fa-solid fa-map-location-dot"></i>
-            <a className="ml-2 truncate" href="#">
-              second office
-            </a>
-          </li>
-          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
-            <i className="fa-solid fa-phone"></i>
-            <a className="ml-2 truncate" href="tel:+994504777714">
-              +994504777714
-            </a>
-          </li>
-          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
-            <i className="fa-solid fa-phone"></i>
-            <a className="ml-2 truncate" href="tel:+994504777714">
-              +994504777714
-            </a>
-          </li>
-          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
-            <i className="fa-solid fa-phone"></i>
-            <a className="ml-2 truncate" href="tel:+994504777714">
-              +994504777714
-            </a>
-          </li>
-          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
-            <i className="fa-solid fa-envelope"></i>
-            <a className="ml-2 truncate" href="mailto:office@carrentbaku.az">
-              office@carrentbaku.az
-            </a>
-          </li>
+          {[
+            { icon: "fa-map-location-dot", text: "Main office", href: "#" },
+            { icon: "fa-map-location-dot", text: "Second office", href: "#" },
+            {
+              icon: "fa-phone",
+              text: "+994504777714",
+              href: "tel:+994504777714",
+            },
+            {
+              icon: "fa-phone",
+              text: "+994504777714",
+              href: "tel:+994504777714",
+            },
+            {
+              icon: "fa-phone",
+              text: "+994504777714",
+              href: "tel:+994504777714",
+            },
+            {
+              icon: "fa-envelope",
+              text: "office@carrentbaku.az",
+              href: "mailto:office@carrentbaku.az",
+            },
+          ].map((item, index) => (
+            <li
+              key={index}
+              className="px-4 py-3 bg-transparent shadow-lg md:shadow-2xl w-full border-2 border-white/10 rounded flex items-center transition-transform duration-300 ease-in-out transform hover:scale-105 hover:border-2 hover:border-blue-500 hover:shadow-2xl hover:shadow-blue-500"
+            >
+              <i className={`fa-solid ${item.icon} text-xl`}></i>
+              <a
+                className="ml-3 truncate text-lg hover:text-blue-500 transition-colors duration-300"
+                href={item.href}
+              >
+                {item.text}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 

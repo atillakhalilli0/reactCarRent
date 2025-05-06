@@ -1,63 +1,117 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Footer() {
+  const [contactsExpanded, setContactsExpanded] = useState(false);
+
+  const toggleContacts = () => {
+    setContactsExpanded(!contactsExpanded);
+  };
+
   return (
     <div className="bg-[#234896]">
-      <div className="w-[70%] mx-auto py-5">
-        <ul className="flex justify-between text-white text-lg items-center font-medium capitalize">
-          <li className="px-3 py-1 bg-transparent shadow-2xl w-full border-1 border-black">
+      <div className="w-full lg:w-[85%] xl:w-[70%] mx-auto px-4 md:px-6 py-5">
+        <button
+          className="md:hidden flex items-center justify-between w-full text-white mb-3 py-2 px-3 border border-white/30 rounded"
+          onClick={toggleContacts}
+        >
+          <span className="font-medium">Contact Information</span>
+          <i
+            className={`fa-solid ${
+              contactsExpanded ? "fa-chevron-up" : "fa-chevron-down"
+            }`}
+          ></i>
+        </button>
+
+        <ul
+          className={`${
+            contactsExpanded ? "grid" : "hidden"
+          } md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 text-white text-sm md:text-base lg:text-lg items-center font-medium capitalize`}
+        >
+          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
             <i className="fa-solid fa-map-location-dot"></i>
-            <a className="ml-2" href="#">
+            <a className="ml-2 truncate" href="#">
               main office
             </a>
           </li>
-          <li className="px-3 py-1 bg-transparent shadow-2xl w-full border-1 border-black">
+          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
             <i className="fa-solid fa-map-location-dot"></i>
-            <a className="ml-2" href="#">
+            <a className="ml-2 truncate" href="#">
               second office
             </a>
           </li>
-          <li className="px-3 py-1 bg-transparent shadow-2xl w-full border-1 border-black">
+          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
             <i className="fa-solid fa-phone"></i>
-            <a className="ml-2" href="tel:+994504777714">
+            <a className="ml-2 truncate" href="tel:+994504777714">
               +994504777714
             </a>
           </li>
-          <li className="px-3 py-1 bg-transparent shadow-2xl w-full border-1 border-black">
+          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
             <i className="fa-solid fa-phone"></i>
-            <a className="ml-2" href="tel:+994504777714">
+            <a className="ml-2 truncate" href="tel:+994504777714">
               +994504777714
             </a>
           </li>
-          <li className="px-3 py-1 bg-transparent shadow-2xl w-full border-1 border-black">
+          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
             <i className="fa-solid fa-phone"></i>
-            <a className="ml-2" href="tel:+994504777714">
+            <a className="ml-2 truncate" href="tel:+994504777714">
               +994504777714
             </a>
           </li>
-          <li className="px-3 py-1 bg-transparent shadow-2xl w-full border-1 flex items-center border-black">
+          <li className="px-3 py-2 bg-transparent shadow-lg md:shadow-2xl w-full border border-white/10 rounded flex items-center">
             <i className="fa-solid fa-envelope"></i>
-            <a className="ml-2" href="mailto:office@carrentbaku.az">
+            <a className="ml-2 truncate" href="mailto:office@carrentbaku.az">
               office@carrentbaku.az
             </a>
           </li>
         </ul>
       </div>
-      <hr className="text-white" />
-      <div className="w-[70%] mx-auto flex justify-around items-center py-5 text-white">
-        <div className="w-[250px]">
+
+      <hr className="border-white/20" />
+
+      <div className="w-full lg:w-[85%] xl:w-[70%] mx-auto px-4 md:px-6 flex flex-col md:flex-row md:justify-around items-center py-5 text-white gap-4 md:gap-0">
+        <div className="w-[180px] md:w-[220px] lg:w-[250px]">
           <img
-            className="object-cover"
+            className="object-cover w-full"
             src="https://carrentbaku.az/wp-content/uploads/2022/11/carrentbaku-white-logo.png"
             alt="logo"
           />
         </div>
-        <div className="text-2xl flex gap-5">
-          <i className="fa-brands fa-whatsapp"></i>
-          <i className="fa-brands fa-instagram"></i>
-          <i className="fa-brands fa-facebook"></i>
+
+        <div className="text-xl md:text-2xl flex gap-4 md:gap-5">
+          <a
+            href="#"
+            className="hover:text-green-600 transition-all duration-300"
+          >
+            <i className="fa-brands fa-whatsapp"></i>
+          </a>
+          <a
+            href="#"
+            className="hover:text-fuchsia-500 transition-all duration-300"
+          >
+            <i className="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="#"
+            className="hover:text-blue-500 transition-all duration-300"
+          >
+            <i className="fa-brands fa-facebook"></i>
+          </a>
         </div>
-        <p className="text-sm font-medium text-gray-300">© 2025 Site crafted by Atilla Khalilli</p>
+
+        <p className="text-xs md:text-sm font-medium text-gray-300 text-center md:text-left">
+          © 2025 Site crafted by{" "}
+          <a
+            href="https://github.com/atillakhalilli0"
+            className="relative overflow-hidden font-mono text-white bg-gray-900 px-6 py-2 rounded-md inline-flex items-center gap-2 hover:shadow-lg transition-all duration-300 border border-gray-700 hover:border-blue-500 group"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-500 to-fuchsia-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></span>
+            <span className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-green-600 via-blue-500 to-fuchsia-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+            <i className="fa-brands fa-github text-lg"></i>
+            <span className="relative">Atilla Khalilli</span>
+          </a>
+        </p>
       </div>
     </div>
   );

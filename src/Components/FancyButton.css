@@ -1,0 +1,70 @@
+.ultimate-btn {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    box-shadow: 0 0 15px rgba(0, 180, 255, 0.6),
+        0 0 40px rgba(0, 180, 255, 0.3),
+        0 0 80px rgba(0, 180, 255, 0.2);
+    transition: all 0.2s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ultimate-btn .glow {
+    background: radial-gradient(circle at var(--x) var(--y), rgba(255, 255, 255, 0.2), transparent 40%);
+    transition: all 0.2s ease;
+}
+
+.ultimate-btn .sparkle {
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 10px 10px;
+    opacity: 0.15;
+    mix-blend-mode: screen;
+    animation: sparkleMove 5s linear infinite;
+}
+
+@keyframes sparkleMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100px 100px;
+    }
+}
+
+.ultimate-btn .shimmer {
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
+    mix-blend-mode: overlay;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.group:hover .shimmer {
+    animation: shimmer 2s ease-out infinite;
+}

@@ -79,21 +79,21 @@ function Home() {
       <div className="flex flex-col sm:flex-row justify-between text-white text-lg md:text-xl lg:text-2xl font-bold capitalize gap-2 sm:gap-0">
         <a
           href="#"
-          className="flex w-full items-center justify-center bg-green-500 hover:bg-green-600 transition-all duration-[.4s] py-2 md:py-3 gap-2 md:gap-3"
+          className="flex w-full items-center justify-center bg-green-500 hover:bg-green-600 hover:shadow-[0px_0px_10px_5px_rgb(0,166,62)] transition-all duration-[.4s] py-2 md:py-3 gap-2 md:gap-3"
         >
           <i className="fa-brands fa-whatsapp"></i>
           <p>book by whatsapp</p>
         </a>
         <a
           href="#"
-          className="flex w-full items-center justify-center bg-blue-500 hover:bg-blue-600 transition-all duration-[.4s] py-2 md:py-3 gap-2 md:gap-3"
+          className="flex w-full items-center justify-center bg-blue-500 hover:bg-blue-600 hover:shadow-[0px_0px_10px_5px_rgb(21,93,252)] transition-all duration-[.4s] py-2 md:py-3 gap-2 md:gap-3"
         >
           <i className="fa-brands fa-telegram"></i>
           <p>book by telegram</p>
         </a>
         <a
           href="#"
-          className="flex w-full items-center justify-center bg-orange-500 hover:bg-orange-600 transition-all duration-[.4s] py-2 md:py-3 gap-2 md:gap-3"
+          className="flex w-full items-center justify-center bg-orange-500 hover:bg-orange-600 hover:shadow-[0px_0px_10px_5px_rgb(255,105,0)] transition-all duration-[.4s] py-2 md:py-3 gap-2 md:gap-3"
         >
           <i className="fa-solid fa-car"></i>
           <p>click to fast booking</p>

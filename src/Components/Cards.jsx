@@ -1,6 +1,6 @@
 import React from "react";
 
-function Cards({ search, data, handleDelete }) {
+function Cards({ search, data, handleDelete, handleBasket }) {
   const filteredCars = data.filter((car) => {
     if (!search) return true;
     const searchLower = search.toLowerCase().trim();
@@ -55,8 +55,10 @@ function Cards({ search, data, handleDelete }) {
               </div>
 
               <div className="mt-6 flex flex-col gap-3">
-                <button className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 rounded-full transition-colors duration-200">
-                  RENT NOW
+                <button
+                onClick={() => handleBasket(item)}
+                className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 rounded-full transition-colors duration-200">
+                  ADD TO BASKET
                 </button>
                 <button
                   onClick={() => handleDelete(item.id)}

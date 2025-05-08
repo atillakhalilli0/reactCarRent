@@ -48,7 +48,7 @@ function Navbar({ setSearch }) {
           </div>
 
           <div>
-            <input onChange={(e) => setSearch(e.target.value)} className="border-white border-2 rounded-xl px-3 outline-none focus:border-green-800 text-lg" placeholder="Search..." type="text" />
+            <input onChange={(e) => setSearch(e.target.value)} className="border-white border-2 rounded-xl w-[200px] px-3 outline-none focus:border-green-800 text-lg" placeholder="Search..." type="text" />
           </div>
         </div>
       </div>

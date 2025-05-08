@@ -1,11 +1,11 @@
 import Home from "./Home";
 import Navbar from "./Navbar";
 
-function Header({ setSearch }) {
+function Header({ setSearch, basket, removeFromBasket }) {
   return (
     <>
       <Navbar setSearch={setSearch} />
-      <Home />
+      <Home removeFromBasket={removeFromBasket} basket={basket} />
     </>
   );
 }

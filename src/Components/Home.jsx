@@ -67,7 +67,7 @@ function Home({ basket, removeFromBasket }) {
           <ul
             className={`${
               menuOpen ? "flex" : "hidden"
-            } md:flex flex-col md:flex-row gap-4 items-center md:gap-6 lg:gap-11 text-base font-semibold py-4 md:py-0`}
+            } md:flex flex-col md:flex-row gap-4 items-center text-base font-semibold py-4 md:py-0`}
           >
             <li>
               <a href="#homepage">Homepage</a>
@@ -88,14 +88,14 @@ function Home({ basket, removeFromBasket }) {
               <a href="#contacts">Contacts</a>
             </li>
             <li>
-              <button onClick={toggleBasket} className="relative">
-                <i className="fa-solid fa-basket-shopping text-xl"></i>
-                {basket.length > 0 && (
-                  <span className="absolute -top-2 -right-3 text-xs bg-red-600 text-white rounded-full px-1.5">
-                    {basket.length}
-                  </span>
-                )}
-              </button>
+            <button onClick={toggleBasket} className="cursor-pointer relative">
+            <i className="fa-solid fa-basket-shopping text-3xl"></i>
+            {basket.length > 0 && (
+              <span className="absolute -top-2 -right-3 text-xs bg-red-600 text-white rounded-full px-1.5">
+                {basket.length}
+              </span>
+            )}
+          </button>
             </li>
           </ul>
         </div>

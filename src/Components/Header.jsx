@@ -1,10 +1,10 @@
 import Home from "./Home";
 import Navbar from "./Navbar";
 
-function Header() {
+function Header({ setSearch }) {
   return (
     <>
-      <Navbar />
+      <Navbar setSearch={setSearch} />
       <Home />
     </>
   );

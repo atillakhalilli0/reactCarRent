@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Navbar() {
+function Navbar({ setSearch }) {
   const [contactsOpen, setContactsOpen] = useState(false);
   
   const toggleContacts = () => {
@@ -45,6 +45,10 @@ function Navbar() {
             <span className="hover:scale-[1.2] transition-all duration-[.4s] cursor-pointer">AZ</span>
             <span className="hover:scale-[1.2] transition-all duration-[.4s] cursor-pointer">EN</span>
             <span className="hover:scale-[1.2] transition-all duration-[.4s] cursor-pointer">RU</span>
+          </div>
+
+          <div>
+            <input onChange={(e) => setSearch(e.target.value)} className="border-white border-2 rounded-xl px-3 outline-none focus:border-green-800 text-lg" placeholder="Search..." type="text" />
           </div>
         </div>
       </div>

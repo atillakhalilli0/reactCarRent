@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import Cards from './Cards'
 import dataArr from './Data'
 
-function Main() {
+function Main({ search }) {
   const [cars, setCars] = useState(dataArr);
-
   function handleDelete(id){
     setCars(cars.filter(item => item.id !== id));
   }
@@ -15,7 +14,7 @@ function Main() {
         <h2 className='capitalize text-5xl font-black'>
           our <span className='text-[#234896]'>featured</span> cars
         </h2>
-        <Cards data={cars} handleDelete={handleDelete} />
+        <Cards data={cars} search={search} handleDelete={handleDelete} />
     </div>
   )
 }

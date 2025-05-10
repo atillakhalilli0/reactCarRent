@@ -281,4 +281,4 @@ const dataArr = [
   },
 ];
 
-export default dataArr
+export default dataArr;

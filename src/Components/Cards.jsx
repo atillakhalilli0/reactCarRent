@@ -56,8 +56,9 @@ function Cards({ search, data, handleDelete, handleBasket }) {
 
               <div className="mt-6 flex flex-col gap-3">
                 <button
-                onClick={() => handleBasket(item)}
-                className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 rounded-full transition-colors duration-200">
+                  onClick={() => handleBasket(item)}
+                  className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 rounded-full transition-colors duration-200"
+                >
                   ADD TO BASKET
                 </button>
                 <button

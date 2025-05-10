@@ -88,14 +88,17 @@ function Home({ basket, removeFromBasket }) {
               <a href="#contacts">Contacts</a>
             </li>
             <li>
-            <button onClick={toggleBasket} className="cursor-pointer relative">
-            <i className="fa-solid fa-basket-shopping text-3xl"></i>
-            {basket.length > 0 && (
-              <span className="absolute -top-2 -right-3 text-xs bg-red-600 text-white rounded-full px-1.5">
-                {basket.length}
-              </span>
-            )}
-          </button>
+              <button
+                onClick={toggleBasket}
+                className="cursor-pointer relative"
+              >
+                <i className="fa-solid fa-basket-shopping text-3xl"></i>
+                {basket.length > 0 && (
+                  <span className="absolute -top-2 -right-3 text-xs bg-red-600 text-white rounded-full px-1.5">
+                    {basket.length}
+                  </span>
+                )}
+              </button>
             </li>
           </ul>
         </div>
